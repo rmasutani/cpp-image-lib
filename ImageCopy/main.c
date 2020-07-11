@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define BMP_HEADER_SIZE 54
+#define BMP_COLOR_TABLE_SIZE 1024
+#define CUSTOM_IMAGE_SIZE 1024*1024
+
 int main()
 {
     FILE *streamIn = fopen("images/cameraman.bmp","rb");
@@ -46,4 +50,16 @@ int main()
        printf("Height : %d\n",height);
 
     return 0;
+}
+
+void imageReader(const char *imgName, 
+                 int *_height,
+                 int *_width,
+                 int *_bitDepth,
+                 unsigned char *_header,
+                 unsigned char *_colorTable,
+                 unsigned char *_buf)
+{
+    int i;
+    FILE *streamIn;
 }
